@@ -5,15 +5,12 @@
   <Plugin PluginFile = "GASSPluginOIS"/>
   <Plugin PluginFile = "GASSPluginPhysX3"/>
   <Plugin PluginFile = "GASSPluginODE"/>
-  <!--<Plugin PluginFile = "GASSPluginHavok"/>-->
-  <!--<Plugin PluginFile = "GASSPluginPagedGeometry"/>-->
   <Plugin PluginFile = "GASSPluginOpenAL"/>
   <Plugin PluginFile = "GASSPluginGame"/>
   <Plugin PluginFile = "GASSPluginBase"/>
-  
 </Plugins>
-<SetDataPath value="../../data/"/>
-<ScenePath value="../../data/sceneries"/>
+<SetDataPath value="../data/"/>
+<ScenePath value="../data/sceneries"/>
 <ResourceManager>
   <ResourceGroup name="Bootstrap">
     <ResourceLocation  path="%GASS_DATA_HOME%/gfx/ogre/ExternalResources/Ogre/OgreCore.zip" type="Zip" recursive="false"/>
@@ -31,15 +28,12 @@
     <ResourceLocation  path="%GASS_DATA_HOME%/gfx/ogre/ExternalResources/PagedGeometry" type="FileSystem" recursive="true"/>
   </ResourceGroup>
   <ResourceGroup name="GASS">
-    <ResourceLocation  path="%GASS_DATA_HOME%/gfx/ogre/3dmodels"  type="FileSystem" recursive="true"/>
-    <ResourceLocation  path="%GASS_DATA_HOME%/gfx/ogre/fonts" type="FileSystem" recursive="false"/>
-    <ResourceLocation  path="%GASS_DATA_HOME%/gfx/ogre/materials/base" type="FileSystem" recursive="false"/>
-	<ResourceLocation  path="%GASS_DATA_HOME%/gfx/ogre/materials/particle" type="FileSystem" recursive="false"/>
-    
+    <ResourceLocation  path="%GASS_DATA_HOME%/gfx/ogre/fonts"  type="FileSystem" recursive="true"/>
+    <ResourceLocation  path="%GASS_DATA_HOME%/gfx/OSG"  type="FileSystem" recursive="true"/>
     <ResourceLocation  path="%GASS_DATA_HOME%/gfx/textures" type="FileSystem" recursive="false"/>
-	<ResourceLocation  path="%GASS_DATA_HOME%/gfx/Ogre/Particles" type="FileSystem" recursive="false"/>
 	<ResourceLocation  path="%GASS_DATA_HOME%/physics" type="FileSystem" recursive="false"/>
 	<ResourceLocation  path="%GASS_DATA_HOME%/input" type="FileSystem" recursive="false"/>
+	<ResourceLocation  path="%GASS_DATA_HOME%/sounds" type="FileSystem" recursive="true"/>
   </ResourceGroup>
   <ResourceGroup name="GASS_VEGETATION_MATERIALS">
     <ResourceLocation  path="%GASS_DATA_HOME%/gfx/ogre/materials/vegetation" type="FileSystem" recursive="false"/>
@@ -63,7 +57,7 @@
     <ResourceLocation  path="%GASS_DATA_HOME%/gfx/GUI/MyGUI_Media" type="FileSystem" recursive="true"/>
   </ResourceGroup>
   <ResourceGroup name="GASS_TEMPLATES">
-    <!--<ResourceLocation  path="%GASS_DATA_HOME%/templates/vehicles" type="FileSystem" recursive="true"/>-->
+    <ResourceLocation  path="%GASS_DATA_HOME%/templates/vehicles/physx" type="FileSystem" recursive="true"/>
 	<!--<ResourceLocation  path="%GASS_DATA_HOME%/templates/game" type="FileSystem" recursive="true"/>-->
 	<ResourceLocation  path="%GASS_DATA_HOME%/templates/camera" type="FileSystem" recursive="false"/>
   </ResourceGroup>
@@ -109,6 +103,8 @@
   </ODECollisionSystem>
   <OSGGraphicsSystem>
     <TaskNode value="POST_SIM"/>
+	<!--<ShadowSettings type="LightSpacePerspectiveShadowMap" SubType="Draw" MinLightMargin="10" MaxFarPlane="200" TextureSize="1024" BaseTextureUnit="0" ShadowTextureUnit="5"/>-->
+	<ShadowSettings type="ParallelSplitShadowMap" MaxFarDistance="100" TextureSize="1024" NumCount="5" MinNearDistanceForSplits="5" MoveVCamBehindRCamFactor="1" PolyOffsetFactor="2.1"/>
   </OSGGraphicsSystem>
 </Systems>
 <RTC>

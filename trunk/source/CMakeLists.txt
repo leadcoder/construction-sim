@@ -88,6 +88,8 @@ endif()
 	${GASS_DIR}/bin/release/GASSCore.dll
 	${GASS_DIR}/bin/release/GASSSim.dll 
 	${GASS_DIR}/bin/release/GASSPluginOgre.dll
+	${GASS_DIR}/bin/release/GASSPluginOSG.dll
+	${GASS_DIR}/bin/release/GASSPluginPhysX3.dll
 	${GASS_DIR}/bin/release/GASSPluginOIS.dll
 	${GASS_DIR}/bin/release/GASSPluginODE.dll
 	${GASS_DIR}/bin/release/GASSPluginPagedGeometry.dll
@@ -171,7 +173,8 @@ ADD_CUSTOM_COMMAND(TARGET ${LIB_NAME}
 			POST_BUILD
 			COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/GASS.xml $<TARGET_FILE_DIR:${LIB_NAME}>
 			COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/data
-			COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/../data ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/data)
+			COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/../data ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/data
+			COMMAND ${CMAKE_COMMAND} -E copy_directory ${OSG_DIR}/bin/osgPlugins-3.0.0 $<TARGET_FILE_DIR:${LIB_NAME}>/osgPlugins-3.0.0)
 
 #install exe			
 

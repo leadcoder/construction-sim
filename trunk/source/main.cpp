@@ -55,44 +55,6 @@ int _getch( ) {
 
 int run(int argc, char* argv[])
 {
-	/*int hm_size = 10000;
-	GASS::Heightmap* hm = new GASS::Heightmap(GASS::Vec3(0,0,0),GASS::Vec3(200,0,200),hm_size,hm_size);
-	for(unsigned int i = 0; i < hm_size; i++)
-	{
-		for(unsigned int j = 0; j < hm_size; j++)
-			hm->SetHeight(i,j, i*0.1);
-	}
-	//hm->ImportRAWFile("c:/temp/TerrainHeightmap.raw", 10, 200);
-	float height = hm->GetInterpolatedHeight(100, 100);
-
-	hm->Save("c:/temp/dump.bin");
-	hm->Load("c:/temp/dump.bin");
-	
-	height = hm->GetInterpolatedHeight(100, 100);
-
-	for(int i = 0; i < 5000; i++)
-	{
-		float height = hm->GetInterpolatedHeight(100, i* 200.0/5000.0);
-		std::cout << height <<  "  ";
-	}*/
-
-	bool is_server = false;
-	std::string config = "../Configuration/app_config.xml";
-	int index = 1;
-	while(index < argc)
-	{
-		char* arg = argv[index];
-		if(strcmp(arg, "--IsServer") == 0)
-		{
-			is_server = atoi(argv[index+1]);
-		}
-		else if(strcmp(arg, "--Config") == 0)
-		{
-			config = argv[index+1];
-		}
-		index += 2;
-	}
-
 	GASS::SimEngine* m_Engine = new GASS::SimEngine();
 	m_Engine->Init(GASS::FilePath("GASS.xml"));
 	GASS::GraphicsSystemPtr gfx_sys = m_Engine->GetSimSystemManager()->GetFirstSystemByClass<GASS::IGraphicsSystem>();
@@ -147,51 +109,13 @@ int run(int argc, char* argv[])
 		GASS::SimEngine::Get().GetSceneObjectTemplateManager()->AddTemplate(mesh_template);
 	}
 
+
 	GASS::SceneObjectPtr terrain_obj = scene->LoadObjectFromTemplate("PlaneObject",scene->GetRootSceneObject());
 	GASS::SceneObjectPtr light_obj = scene->LoadObjectFromTemplate("LightObject",scene->GetRootSceneObject());
 	light_obj->SendImmediate(GASS::MessagePtr(new GASS::RotationMessage(GASS::Vec3(40,32,0))));
 	
-	//GASS::SceneObjectPtr tlc = scene->LoadObjectFromTemplate("ToyotaLandcruiser",scene->GetRootSceneObject());
-	//tlc->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(0,4,-13))));
-	
-	GASS::SceneObjectPtr tlc = scene->LoadObjectFromTemplate("Liebherr",scene->GetRootSceneObject());
-	tlc->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(0,4,-13))));
-	
-	
-	/*GASS::SceneObjectPtr group = scene->LoadObjectFromTemplate("AIVehicleGroup",scene->GetRootSceneObject());
-	
-	GASS::SceneObjectPtr wp = scene->LoadObjectFromTemplate("BehaviorWaypoint",group->GetChildByID("BEHAVIOR_WPL"));
-	wp->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(0,0,-100))));
-	wp = scene->LoadObjectFromTemplate("BehaviorWaypoint",group->GetChildByID("BEHAVIOR_WPL"));
-	wp->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(40,0,-100))));
-	wp = scene->LoadObjectFromTemplate("BehaviorWaypoint",group->GetChildByID("BEHAVIOR_WPL"));
-	wp->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(40,0,-1000))));
-
-	GASS::SceneObjectPtr trigger = scene->LoadObjectFromTemplate("VehicleTrigger",scene->GetRootSceneObject());
-	trigger->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(0,0,-80))));
-	GASS::BaseSceneComponentPtr wp_comp = wp->GetBaseSceneComponent("VehicleBehaviorComponent");
-	GASS::SceneObjectRef t_ref(trigger->GetGUID());
-	std::vector<GASS::SceneObjectRef> t_vec;
-	t_vec.push_back(t_ref);
-	wp_comp->SetPropertyByType("Triggers",t_vec);
-	
-
-
-	GASS::SceneObjectPtr patria = scene->LoadObjectFromTemplate("AIVehicle",group);
-	patria = scene->LoadObjectFromTemplate("AIVehicle",group);
-	patria->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(0,0,10))));
-
-	patria = scene->LoadObjectFromTemplate("AIVehicle",group);
-	patria->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(0,0,20))));
-
-	
-	GASS::BaseSceneComponentPtr trigger_comp = trigger->GetBaseSceneComponent("VehicleTriggerComponent");
-	GASS::SceneObjectRef c_ref(patria->GetGUID());
-	std::vector<GASS::SceneObjectRef> c_vec;
-	c_vec.push_back(c_ref);
-	trigger_comp->SetPropertyByType("ActivationControllers",c_vec);
-	*/
-
+	GASS::SceneObjectPtr vehicle = scene->LoadObjectFromTemplate("Liebherr",scene->GetRootSceneObject());
+	vehicle->SendImmediate(GASS::MessagePtr(new GASS::PositionMessage(GASS::Vec3(0,4,-13))));
 	
 	//create free camera and set start pos
 	GASS::SceneObjectPtr free_obj = scene->LoadObjectFromTemplate("FreeCameraObject",scene->GetRootSceneObject());
@@ -202,20 +126,7 @@ int run(int argc, char* argv[])
 		GASS::SystemMessagePtr camera_msg(new GASS::ChangeCameraRequest(free_obj->GetFirstComponentByClass<GASS::ICameraComponent>()));
 		m_Engine->GetSimSystemManager()->PostMessage(camera_msg);
 	}
-	static float wheel_vel = 0;
-	static float steer_vel = 0;
-
-	GASS::BaseSceneManagerPtr ogre_sm = DYNAMIC_PTR_CAST<GASS::BaseSceneManager>(scene->GetSceneManagerByName("OgreGraphicsSceneManager"));
-	if(ogre_sm)
-	{
-		/*ogre_sm->SetPropertyByString("ShadowMode","SHADOWS_DISABLED");
-		ogre_sm->SetPropertyByString("ShadowMode","TEXTURE_SHADOWS_MODULATIVE");
-
-		//ogre_sm->SetPropertyByString("ShadowMode","TEXTURE_SHADOWS_ADDITIVE");
-		ogre_sm->SetPropertyByString("TextureShadowProjection","UNIFORM_FOCUSED");
-		ogre_sm->SetPropertyByType("SelfShadowing",false);*/
-	}
-
+	
 	while(true)
 	{
 		m_Engine->Update();
@@ -239,74 +150,6 @@ int run(int argc, char* argv[])
 				box_obj->SendImmediate(GASS::MessagePtr(new GASS::PhysicsBodyAddForceRequest(vel)));
 				box_obj->SendImmediate(GASS::MessagePtr(new GASS::PhysicsBodyAddTorqueRequest(torq)));
 			}
-		}
-		else if(GetAsyncKeyState(VK_DELETE))
-		{
-		}
-		else if(GetAsyncKeyState(VK_F1))
-		{
-			if(!key_down)
-			{
-				GASS::SimEngine::Get().GetSimSystemManager()->PostMessage(GASS::SystemRequestMessagePtr(new GASS::ScenarioStateRequest(GASS::SS_PLAY)));
-				key_down = true;
-				//tp.x += 1;
-				//tlc->PostMessage(GASS::MessagePtr(new GASS::PositionMessage(tp)));
-//				mesh_obj->SendImmediate(GASS::MessagePtr(new GASS::MeshFileMessage("wheel.3ds")));
-			}
-		}
-		else if(GetAsyncKeyState(VK_F2))
-		{
-			if(!key_down)
-			{
-				GASS::SimEngine::Get().GetSimSystemManager()->PostMessage(GASS::SystemRequestMessagePtr(new GASS::ScenarioStateRequest(GASS::SS_STOP)));
-				
-				//tp.y += 0.2;
-//				tlc->PostMessage(GASS::MessagePtr(new GASS::PositionMessage(tp)));
-
-				key_down = true;
-	//			mesh_obj->SendImmediate(GASS::MessagePtr(new GASS::MeshFileMessage("car.3ds")));
-			}
-		}
-		else if(GetAsyncKeyState(VK_F3))
-		{
-			if(!key_down)
-			{
-				key_down = true;
-				//bdrige_seg_obj2->PostMessage(GASS::MessagePtr(new GASS::MaterialMessage(GASS::Vec4(1,1,1,1),GASS::Vec3(1,1,1))));
-			}
-		}
-		else if(GetAsyncKeyState(VK_F4))
-		{
-			if(!key_down)
-			{
-				key_down = true;
-			}
-		}
-
-		else if(GetAsyncKeyState(VK_DOWN))
-		{
-			key_down = true;
-			wheel_vel -= 2;
-		}
-		else if(GetAsyncKeyState(VK_UP))
-		{
-			key_down = true;
-			wheel_vel += 2;
-		}
-		else if(GetAsyncKeyState(VK_LEFT))
-		{
-			key_down = true;
-			steer_vel = 2;
-		}
-		else if(GetAsyncKeyState(VK_RIGHT))
-		{
-			key_down = true;
-			steer_vel = -2;
-		}
-		else
-		{
-			steer_vel = 0;
-			key_down = false;
 		}
 	}
 	return 0;

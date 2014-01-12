@@ -8,7 +8,7 @@ if(${CMAKE_CL_64})
 	set(PHYSX_BIN_DIR "${PHYSX_DIR}/bin/win64")
 	set(DLL_SUFFIX "_x64")
 else()
-	set(PHYSX_BIN_DIR "${PHYSX_DIR}/lib/win32")
+	set(PHYSX_BIN_DIR "${PHYSX_DIR}/bin/win32")
 	set(DLL_SUFFIX "_x86")
 endif()
 
@@ -26,13 +26,20 @@ add_executable (${LIB_NAME} ${CPP_FILES} ${H_FILES})
 set_target_properties(${LIB_NAME} PROPERTIES DEBUG_POSTFIX _d)
 
 #Add project dependency libs
-target_link_libraries(${LIB_NAME} GASSCore GASSSim  ${GASS_COMMON_LINK_LIBRARIES})
+target_link_libraries(${LIB_NAME} ${GASS_COMMON_LINK_LIBRARIES})
+
+if(EXISTS "${GASS_DEPENDENCIES_DIR}/OpenSceneGraph-v3.0.1")
+	set(OSG_DIR  "${GASS_DEPENDENCIES_DIR}/OpenSceneGraph-v3.0.1" CACHE PATH "OSG folder")
+else()
+	set(OSG_DIR $ENV{OGRE_HOME} CACHE PATH "OSG folder")
+endif()
 
 if(EXISTS "${GASS_DEPENDENCIES_DIR}/ogre-v1-9")
 	set(OGRE_DIR  "${GASS_DEPENDENCIES_DIR}/ogre-v1-9" CACHE PATH "Ogre 3D folder")
 else()
 	set(OGRE_DIR $ENV{OGRE_HOME} CACHE PATH "Ogre 3D folder")
 endif()
+
 
 	set(DEP_DLL_FILES_RELEASE 
 	${GASS_DEPENDENCIES_DIR}/lib/tbb.dll 
@@ -76,6 +83,20 @@ endif()
 	${PHYSX_BIN_DIR}/PhysX3Cooking${DLL_SUFFIX}.dll
 	${PHYSX_BIN_DIR}/PhysX3CharacterKinematic${DLL_SUFFIX}.dll
 	${PHYSX_BIN_DIR}/PhysX3Profile${DLL_SUFFIX}.dll
+	
+	
+	${GASS_DIR}/bin/release/GASSCore.dll
+	${GASS_DIR}/bin/release/GASSSim.dll 
+	${GASS_DIR}/bin/release/GASSPluginOgre.dll
+	${GASS_DIR}/bin/release/GASSPluginOIS.dll
+	${GASS_DIR}/bin/release/GASSPluginODE.dll
+	${GASS_DIR}/bin/release/GASSPluginPagedGeometry.dll
+	${GASS_DIR}/bin/release/GASSPluginEnvironment.dll
+	${GASS_DIR}/bin/release/GASSPluginOpenAL.dll
+	${GASS_DIR}/bin/release/GASSPluginGame.dll
+	${GASS_DIR}/bin/release/GASSPluginBase.dll
+	${GASS_DIR}/bin/release/GASSPluginRakNet.dll
+	
 	)
 	set(DEP_DLL_FILES_DEBUG 
 	${GASS_DEPENDENCIES_DIR}/lib/tbb_debug.dll
@@ -118,32 +139,20 @@ endif()
 	${PHYSX_BIN_DIR}/PhysX3CookingCHECKED${DLL_SUFFIX}.dll
 	${PHYSX_BIN_DIR}/PhysX3CharacterKinematicCHECKED${DLL_SUFFIX}.dll
 	${PHYSX_BIN_DIR}/PhysX3Profile${DLL_SUFFIX}.dll
+	${GASS_DIR}/bin/debug/GASSCore_d.dll
+	${GASS_DIR}/bin/debug/GASSSim_d.dll 
+	${GASS_DIR}/bin/debug/GASSPluginOgre_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginOSG_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginOIS_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginODE_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginPhysx3_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginPagedGeometry_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginEnvironment_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginOpenAL_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginGame_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginBase_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginRakNet_d.dll
 	)
-	
-	set(GASS_RELEASE_DLL_FILES 
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSCore.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSSim.dll 
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginOgre.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginOIS.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginODE.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginPagedGeometry.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginEnvironment.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginOpenAL.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginGame.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginBase.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/release/GASSPluginRakNet.dll)
-	set(GASS_DEBUG_DLL_FILES 
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSCore_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSSim_d.dll 
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginOgre_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginOIS_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginODE_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginPagedGeometry_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginEnvironment_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginOpenAL_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginGame_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginBase_d.dll
-	${GASS_RUNTIME_OUTPUT_DIRECTORY}/debug/GASSPluginRakNet_d.dll)
 
 #add dll files to out dir to enable debugging from IDE without install step
 foreach(DLL_FILE ${DEP_DLL_FILES_DEBUG})
@@ -160,25 +169,27 @@ endforeach()
 			
 ADD_CUSTOM_COMMAND(TARGET ${LIB_NAME}
 			POST_BUILD
-			COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/bin/configuration $<TARGET_FILE_DIR:${LIB_NAME}>
-			COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/../data
-			COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/../common/data ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/../data)
+			COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/GASS.xml $<TARGET_FILE_DIR:${LIB_NAME}>
+			COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/data
+			COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/../data ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/data)
 
 #install exe			
 
-install(TARGETS ${LIB_NAME}  RUNTIME DESTINATION ${GASS_INSTALL_BIN_DIR_DEBUG} CONFIGURATIONS Debug)
-install(TARGETS ${LIB_NAME}  RUNTIME DESTINATION ${GASS_INSTALL_BIN_DIR_RELEASE} CONFIGURATIONS Release)
+install(TARGETS ${LIB_NAME}  RUNTIME DESTINATION ${CSIM_INSTALL_BIN_DIR_DEBUG} CONFIGURATIONS Debug)
+install(TARGETS ${LIB_NAME}  RUNTIME DESTINATION ${CSIM_INSTALL_BIN_DIR_RELEASE} CONFIGURATIONS Release)
 
 #install config
-FILE(GLOB GASS_CONFIG "${CMAKE_CURRENT_SOURCE_DIR}/bin/Configuration/*.xml")
-install(FILES ${GASS_CONFIG} DESTINATION ${GASS_INSTALL_BIN_DIR_DEBUG})
-install(FILES ${GASS_CONFIG} DESTINATION ${GASS_INSTALL_BIN_DIR_RELEASE})
+#FILE(GLOB GASS_CONFIG "${CMAKE_CURRENT_SOURCE_DIR}/bin/Configuration/*.xml")
+#install(FILES ${GASS_CONFIG} DESTINATION ${GASS_INSTALL_BIN_DIR_DEBUG})
+#install(FILES ${GASS_CONFIG} DESTINATION ${GASS_INSTALL_BIN_DIR_RELEASE})
+install(FILES  ${CMAKE_CURRENT_SOURCE_DIR}/GASS.xml" DESTINATION ${CSIM_INSTALL_BIN_DIR_DEBUG})
+install(FILES  ${CMAKE_CURRENT_SOURCE_DIR}/GASS.xml" DESTINATION ${CSIM_INSTALL_BIN_DIR_RELEASE})
 
 #install data
-install(DIRECTORY ../common/data DESTINATION ${GASS_INSTALL_SAMPLES_DIR}/../ FILES_MATCHING PATTERN "*.*" PATTERN ".svn" EXCLUDE)
+install(DIRECTORY ../data DESTINATION ${CSIM_INSTALL_BIN_DIR} FILES_MATCHING PATTERN "*.*" PATTERN ".svn" EXCLUDE)
 
 #install dlls
-install (FILES  ${DEP_DLL_FILES_DEBUG} DESTINATION ${GASS_INSTALL_BIN_DIR_DEBUG} CONFIGURATIONS Debug)
-install (FILES  ${DEP_DLL_FILES_RELEASE} DESTINATION ${GASS_INSTALL_BIN_DIR_RELEASE} CONFIGURATIONS Release)
+install (FILES  ${DEP_DLL_FILES_DEBUG} DESTINATION ${CSIM_INSTALL_BIN_DIR_DEBUG} CONFIGURATIONS Debug)
+install (FILES  ${DEP_DLL_FILES_RELEASE} DESTINATION ${CSIM_INSTALL_BIN_DIR_DEBUG} CONFIGURATIONS Release)
 
 

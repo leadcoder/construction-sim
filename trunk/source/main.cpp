@@ -94,7 +94,7 @@ int run(int argc, char* argv[])
 	}
 
 	GASS::SimEngine* m_Engine = new GASS::SimEngine();
-	m_Engine->Init(GASS::FilePath("GASSPhysicsOSGDemo.xml"));
+	m_Engine->Init(GASS::FilePath("GASS.xml"));
 	GASS::GraphicsSystemPtr gfx_sys = m_Engine->GetSimSystemManager()->GetFirstSystemByClass<GASS::IGraphicsSystem>();
 	GASS::RenderWindowPtr win = gfx_sys->CreateRenderWindow("MainWindow",800,600);
 	win->CreateViewport("MainViewport", 0, 0, 1, 1);

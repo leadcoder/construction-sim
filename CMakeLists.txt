@@ -32,11 +32,16 @@ set(CSIM_INSTALL_BIN_DIR_DEBUG "bin/debug")
 set(CSIM_INSTALL_BIN_DIR_RELEASE "bin/release")
 
 set(GASS_COMMON_INCLUDE_DIRS "${BOOST_DIR}"  "${GASS_DIR}/include" 	"${GASS_DEPENDENCIES_DIR}/tinyxml"	"${GASS_DEPENDENCIES_DIR}/tbb/include" "${GASS_DEPENDENCIES_DIR}/angelscript/include")
-set(GASS_COMMON_LIB_DIRS "${BOOST_DIR}/lib/" "${GASS_DEPENDENCIES_DIR}/lib/" "${GASS_DEPENDENCIES_DIR}/angelscript/lib")
+set(GASS_COMMON_LIB_DIRS "${BOOST_DIR}/lib/" "${GASS_DEPENDENCIES_DIR}/lib/" "${GASS_DEPENDENCIES_DIR}/angelscript/lib" "${GASS_DIR}/lib/")
 set(GASS_COMMON_LINK_LIBRARIES
+	optimized GASSCore
+	optimized GASSSim
 	optimized tinyxml
-	optimized angelscript	
+	optimized angelscript
+	debug GASSCore_d
+	debug GASSSim_d
 	debug tinyxml_d 
 	debug angelscriptd
+	
 	)
 add_subdirectory( Source )

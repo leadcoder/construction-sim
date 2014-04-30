@@ -45,7 +45,7 @@ endif()
 	${GASS_DEPENDENCIES_DIR}/lib/tbb.dll 
 	${GASS_DEPENDENCIES_DIR}/lib/OpenAL32.dll
 	${GASS_DEPENDENCIES_DIR}/lib/OIS.dll
-	#${GASS_DEPENDENCIES_DIR}/MyGUI_3.2.0/bin/release/MyGUIEngine.dll
+	${GASS_DEPENDENCIES_DIR}/MyGUI_3.2.0/bin/release/MyGUIEngine.dll
 	${OGRE_DIR}/bin/release/OgreMain.dll
 	${OGRE_DIR}/bin/release/OgreTerrain.dll
 	${OGRE_DIR}/bin/release/OgrePaging.dll
@@ -98,13 +98,13 @@ endif()
 	${GASS_DIR}/bin/release/GASSPluginGame.dll
 	${GASS_DIR}/bin/release/GASSPluginBase.dll
 	${GASS_DIR}/bin/release/GASSPluginRakNet.dll
-	
+	${GASS_DIR}/bin/release/GASSPluginMyGUI.dll
 	)
 	set(DEP_DLL_FILES_DEBUG 
 	${GASS_DEPENDENCIES_DIR}/lib/tbb_debug.dll
 	${GASS_DEPENDENCIES_DIR}/lib/OpenAL32.dll	
 	${GASS_DEPENDENCIES_DIR}/lib/OIS_d.dll
-	#${GASS_DEPENDENCIES_DIR}/MyGUI_3.2.0/bin/debug/MyGUIEngine_d.dll
+	${GASS_DEPENDENCIES_DIR}/MyGUI_3.2.0/bin/debug/MyGUIEngine_d.dll
 	${OGRE_DIR}/bin/debug/OgreMain_d.dll
 	${OGRE_DIR}/bin/debug/OgreTerrain_d.dll
 	${OGRE_DIR}/bin/debug/OgrePaging_d.dll
@@ -154,6 +154,7 @@ endif()
 	${GASS_DIR}/bin/debug/GASSPluginGame_d.dll
 	${GASS_DIR}/bin/debug/GASSPluginBase_d.dll
 	${GASS_DIR}/bin/debug/GASSPluginRakNet_d.dll
+	${GASS_DIR}/bin/debug/GASSPluginMyGUI_d.dll
 	)
 
 #add dll files to out dir to enable debugging from IDE without install step
@@ -174,7 +175,7 @@ ADD_CUSTOM_COMMAND(TARGET ${LIB_NAME}
 			COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/GASS.xml $<TARGET_FILE_DIR:${LIB_NAME}>
 			COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/data
 			COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/../data ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/data
-			COMMAND ${CMAKE_COMMAND} -E copy_directory ${OSG_DIR}/bin/osgPlugins-3.0.0 $<TARGET_FILE_DIR:${LIB_NAME}>/osgPlugins-3.0.0)
+			COMMAND ${CMAKE_COMMAND} -E copy_directory ${OSG_DIR}/bin/osgPlugins-3.0.1 $<TARGET_FILE_DIR:${LIB_NAME}>/osgPlugins-3.0.0)
 
 #install exe			
 
@@ -187,8 +188,8 @@ install(TARGETS ${LIB_NAME} RUNTIME DESTINATION ${CSIM_INSTALL_BIN_DIR_RELEASE} 
 #install(FILES ${GASS_CONFIG} DESTINATION ${GASS_INSTALL_BIN_DIR_RELEASE})
 install(FILES  ${CMAKE_CURRENT_SOURCE_DIR}/GASS.xml DESTINATION ${CSIM_INSTALL_BIN_DIR_DEBUG})
 install(FILES  ${CMAKE_CURRENT_SOURCE_DIR}/GASS.xml DESTINATION ${CSIM_INSTALL_BIN_DIR_RELEASE})
-install(DIRECTORY "${OSG_DIR}/bin/osgPlugins-3.0.0" DESTINATION ${CSIM_INSTALL_BIN_DIR_DEBUG} FILES_MATCHING PATTERN "*.*" PATTERN ".svn" EXCLUDE)
-install(DIRECTORY "${OSG_DIR}/bin/osgPlugins-3.0.0" DESTINATION ${CSIM_INSTALL_BIN_DIR_RELEASE} FILES_MATCHING PATTERN "*.*" PATTERN ".svn" EXCLUDE)
+install(DIRECTORY "${OSG_DIR}/bin/osgPlugins-3.0.1" DESTINATION ${CSIM_INSTALL_BIN_DIR_DEBUG} FILES_MATCHING PATTERN "*.*" PATTERN ".svn" EXCLUDE)
+install(DIRECTORY "${OSG_DIR}/bin/osgPlugins-3.0.1" DESTINATION ${CSIM_INSTALL_BIN_DIR_RELEASE} FILES_MATCHING PATTERN "*.*" PATTERN ".svn" EXCLUDE)
 
 #install data
 install(DIRECTORY ../data DESTINATION ${CSIM_INSTALL_BIN_DIR} FILES_MATCHING PATTERN "*.*" PATTERN ".svn" EXCLUDE)

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout">
+    <Widget type="ImageBox" skin="ImageBox" position="32 64 1024 512" layer="RTT_Panel" name="_Main">
+        <Property key="ImageTexture" value="MonitorBack.png"/>
+        <Property key="ImageCoord" value="0 0 1024 512"/>
+        <Property key="ImageTile" value="1024 512"/>
+		<Widget type="ImageBox" skin="ImageBox" position="49 140 210 210" name="SpeedMeter">
+            <Property key="ImageTexture" value="speed.png"/>
+			<Property key="ImageCoord" value="0 0 512 512"/>
+			<Property key="ImageTile" value="512 512"/>
+			<!--<Property key="ImageResource" value="ImageShip"/>
+		    <Property key="ImageGroup" value="Ship"/>
+            <Property key="ImageName" value="None"/>-->
+		<Widget type="ImageBox" skin="RotatingSkin" position="0 0 210 210" name="Ship">
+            <Property key="ImageTexture" value="needle.png"/>
+			<Property key="ImageCoord" value="0 0 512 512"/>
+			<Property key="ImageTile" value="512 512"/>
+			<!--<Property key="ImageResource" value="ImageShip"/>
+		    <Property key="ImageGroup" value="Ship"/>
+            <Property key="ImageName" value="None"/>-->
+		</Widget>
+		</Widget>
+	</Widget>
+</MyGUI>

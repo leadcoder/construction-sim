@@ -43,6 +43,11 @@
 			<InputHandlerComponent>
 				<ControlSetting value ="LiebherrInputSettings"/>
 			</InputHandlerComponent>
+			<MyGUILayoutComponent>
+				<TextureName value="cube.jpg"/>
+				<LayoutFile value="TestInstruments.layout"/> 
+			</MyGUILayoutComponent>
+			<MyGUIVehicleInstrumentsComponent/>
 		</Components>
 		<ComponentContainers>
 			<SceneObjectTemplate>

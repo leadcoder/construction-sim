@@ -59,8 +59,9 @@
 	<ResourceLocation  path="%GASS_DATA_HOME%/gfx/GUI/MyGUI/Common/base" type="FileSystem" recursive="true"/>
 	<ResourceLocation  path="%GASS_DATA_HOME%/gfx/GUI/MyGUI/Common/Themes" type="FileSystem" recursive="true"/>
 	<ResourceLocation  path="%GASS_DATA_HOME%/gfx/GUI/MyGUI/MyGUI_Media" type="FileSystem" recursive="true"/>
-	<ResourceLocation  path="%GASS_DATA_HOME%/gfx/GUI/MyGUI/GASS" type="FileSystem" recursive="true"/>
-  </ResourceGroup>
+	<ResourceLocation  path="%GASS_DATA_HOME%/gfx/GUI/MyGUI/GASS" type="FileSystem" recursive="false"/>
+	<ResourceLocation  path="%GASS_DATA_HOME%/gfx/GUI/MyGUI/Instruments" type="FileSystem" recursive="false"/>
+ </ResourceGroup>
   <ResourceGroup name="GASS_TEMPLATES">
     <ResourceLocation  path="%GASS_DATA_HOME%/templates/vehicles/physx" type="FileSystem" recursive="true"/>
 	<!--<ResourceLocation  path="%GASS_DATA_HOME%/templates/game" type="FileSystem" recursive="true"/>-->

@@ -112,7 +112,7 @@
 			</SceneObjectTemplate>
 			<SceneObjectTemplate>
 				<Name value="WheeledLibherrHouse"/>
-				<Inheritance value="LibherrHouse"/>  <!-- house is defined in other file-->
+				<Inheritance value="LibherrHouse"/>  
 				<ID value="HOUSE"/>
 				<Components>
 					<LocationComponent>
@@ -123,7 +123,7 @@
 			</SceneObjectTemplate>
 			<SceneObjectTemplate>
 				<Name value="WheeledLibherrBlade"/>
-				<Inheritance value="LibherrBlade"/>  <!-- blade is defined in other file-->
+				<Inheritance value="LibherrBlade"/>  
 				<ID value="BLADE"/>
 				<Components>
 					<LocationComponent>
@@ -152,7 +152,7 @@
 			
 			<SceneObjectTemplate>
 				<Name value="WheeledLibherrSupportLegRight"/>
-				<Inheritance value="LibherrSupportLegRight"/>  <!-- blade is defined in other file-->
+				<Inheritance value="LibherrSupportLegRight"/>  
 				<ID value="SUPPORT_LEG_RIGHT"/>
 				<Components>
 					<LocationComponent>
@@ -164,7 +164,7 @@
 			
 			<SceneObjectTemplate>
 				<Name value="WheeledLibherrSupportLegLeft"/>
-				<Inheritance value="LibherrSupportLegLeft"/>  <!-- blade is defined in other file-->
+				<Inheritance value="LibherrSupportLegLeft"/>  
 				<ID value="SUPPORT_LEG_LEFT"/>
 				<Components>
 					<LocationComponent>

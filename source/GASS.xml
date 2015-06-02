@@ -6,7 +6,8 @@
   <Plugin PluginFile = "GASSPluginPhysX3"/>
   <Plugin PluginFile = "GASSPluginODE"/>
   <Plugin PluginFile = "GASSPluginOpenAL"/>
-  <Plugin PluginFile = "GASSPluginGame"/>
+  <Plugin PluginFile = "GASSPluginInput"/>
+  <Plugin PluginFile = "GASSPluginVehicle"/>
   <Plugin PluginFile = "GASSPluginBase"/>
   <Plugin PluginFile = "GASSPluginMyGUI"/>
 </Plugins>
@@ -76,40 +77,27 @@
 <Systems>
   <MaterialSystem/>
   <OISInputSystem>
-    <TaskNode value="PRE_SIM"/>
     <!-- PRE BUCKET UPDATE-->
     <ExclusiveMode value="false"/>
   </OISInputSystem>
   <ControlSettingsSystem>
-    <TaskNode value="PRE_SIM"/>
   </ControlSettingsSystem>
   <CoreSystem>
-    <TaskNode value="PRE_SIM"/>
   </CoreSystem>
   <MyGUIOSGSystem>
-    <TaskNode value="PRE_SIM"/>
   </MyGUIOSGSystem>
-  <GameSystem>
-    <TaskNode value="SIM"/>
-  </GameSystem>
+  <SimulationSystem>
+  </SimulationSystem>
   <RakNetNetworkSystem>
-    <TaskNode value="SIM"/>
   </RakNetNetworkSystem>
   <OpenALSoundSystem>
-    <TaskNode value="PRE_SIM"/>
   </OpenALSoundSystem>
-  <LuaScriptSystem>
-    <TaskNode value="PRE_SIM"/>
-  </LuaScriptSystem>
   <PhysXPhysicsSystem>
-    <TaskNode value="SIM"/>
   </PhysXPhysicsSystem>
   <ODECollisionSystem>
-	<TaskNode value="POST_SIM"/>
   </ODECollisionSystem>
   <OSGGraphicsSystem>
-    <TaskNode value="POST_SIM"/>
-	<!--<ShadowSettings type="LightSpacePerspectiveShadowMap" SubType="Draw" MinLightMargin="10" MaxFarPlane="200" TextureSize="1024" BaseTextureUnit="0" ShadowTextureUnit="5"/>-->
+     <!--<ShadowSettings type="LightSpacePerspectiveShadowMap" SubType="Draw" MinLightMargin="10" MaxFarPlane="200" TextureSize="1024" BaseTextureUnit="0" ShadowTextureUnit="5"/>-->
 	<ShadowSettings type="ParallelSplitShadowMap" MaxFarDistance="100" TextureSize="1024" NumCount="5" MinNearDistanceForSplits="5" MoveVCamBehindRCamFactor="1" PolyOffsetFactor="2.1"/>
   </OSGGraphicsSystem>
 </Systems>

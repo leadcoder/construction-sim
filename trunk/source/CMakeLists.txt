@@ -8,7 +8,8 @@ find_package(GASSSim COMPONENTS GASSEditorModule
 								GASSPluginPhysX3 
 								GASSPluginODE 
 								GASSPluginOpenAL
-								GASSPluginGame
+								GASSPluginInput
+								GASSPluginVehicle
 								GASSPluginBase
 								GASSPluginMyGUI)
 								

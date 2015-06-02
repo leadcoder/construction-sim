@@ -19,10 +19,10 @@
 *****************************************************************************/
 
 #include "Sim/GASS.h"
-#include "Plugins/Game/GameMessages.h"
+//#include "Plugins/Game/GameMessages.h"
 #include "Sim/GASSSceneObjectRef.h"
 #include "Sim/GASSBaseSceneManager.h"
-#include "Core/Utils/GASSHeightmap.h"
+//#include "Core/Utils/GASSHeightmap.h"
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
@@ -253,7 +253,7 @@ namespace GASS
 				static bool key_down=false;
 				static double last_time = 0;
 				//m_GUI->OnUpdate(SimEngine::Get().GetTime() - last_time);
-				last_time = SimEngine::Get().GetTime();
+				//last_time = SimEngine::Get().GetTime();
 				if(GetAsyncKeyState(VK_SPACE))
 				{
 					if(!key_down)

@@ -17,7 +17,7 @@
 				<EnginePeakTorque value ="200"/>
 				<EngineMaxRotationSpeed value="300"/>
 				<ClutchStrength value = "10"/>
-				<GearRatios value="-16;0;16;11;6"/>
+				<GearRatios value="-16 0 16 11 6"/>
 				<!--<GearRatios value="-4;0;4;2;1.5;1.1;1.0"/>-->
 				<GearSwitchTime value = "0.5"/>
 				<UseAutoReverse value="true"/>

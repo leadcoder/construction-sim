@@ -57,7 +57,7 @@ namespace GASS
 {
 	class CESim;
 
-	class GUI : public SHARE_CLASS<GUI>, public IMessageListener
+	class GUI : public GASS_SHARED_CLASS<GUI>, public IMessageListener
 	{
 
 	private:
@@ -132,7 +132,7 @@ namespace GASS
 			m_MainMenuWin->setVisible(false);
 		}
 	};
-	typedef SPTR<GUI> GUIPtr;
+	typedef GASS_SHARED_PTR<GUI> GUIPtr;
 
 
 	Vec3 gOffset(500000,0,500000);
@@ -237,7 +237,7 @@ namespace GASS
 			GASS::SceneObjectPtr terrain_obj = scene->LoadObjectFromTemplate("PlaneObject",scene->GetRootSceneObject());
 			GASS::SceneObjectPtr light_obj = scene->LoadObjectFromTemplate("LightObject",scene->GetRootSceneObject());
 			light_obj->SendImmediateRequest(GASS::RotationRequestPtr(new GASS::RotationRequest(GASS::Vec3(40,32,0))));
-			BaseSceneManagerPtr scene_manager = DYNAMIC_PTR_CAST<BaseSceneManager>(scene->GetSceneManagerByName("PhysXPhysicsSceneManager"));
+			BaseSceneManagerPtr scene_manager = GASS_DYNAMIC_PTR_CAST<BaseSceneManager>(scene->GetSceneManagerByName("PhysXPhysicsSceneManager"));
 			scene_manager->SetPropertyByType("Offset",Vec3(-gOffset));
 
 
@@ -406,7 +406,7 @@ int main(int argc, char* argv[])
 	catch(std::exception& e) 
 	{
 		std::cout << "Exception:" << e.what() << std::endl;
-		getch();
+		_getch();
 	}
 	return ret;
 }

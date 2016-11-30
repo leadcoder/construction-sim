@@ -1,0 +1,1082 @@
+material ExBladeMat1 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_007.001
+        {
+            ambient 0.18196099996566772 0.18196099996566772 0.18196099996566772 1.0
+            diffuse 0.14556880214167833 0.14556880214167833 0.14556880214167833 1.0
+            specular 0.0 0.0 0.0 1.0 12.0
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_008.002 genrated by blender2ogre 0.6.0
+
+material ExBoltMat
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_008.002
+        {
+            //ambient 0.09411799907684326 0.09411799907684326 0.09411799907684326 1.0
+            //diffuse 0.07529440038344859 0.07529440038344859 0.07529440038344859 1.0
+			ambient 1 0 0 1.0
+            diffuse 1 0 0 1.0
+            specular 0.0 0.0 0.0 1.0 12.0
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExBucketMat1 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_006
+        {
+            ambient 0.33725500106811523 0.33725500106811523 0.33725500106811523 1.0
+            diffuse 0.2698040048748851 0.2698040048748851 0.2698040048748851 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_007 genrated by blender2ogre 0.6.0
+
+material ExBucketMat2
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_007
+        {
+            ambient 0.22745099663734436 0.22745099663734436 0.22745099663734436 1.0
+            diffuse 0.18196080002130266 0.18196080002130266 0.18196080002130266 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExBlackMat 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_008.002
+        {
+            ambient 0.11764699965715408 0.11764699965715408 0.11764699965715408 1.0
+            diffuse 0.09411760112818479 0.09411760112818479 0.09411760112818479 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExYellowMat 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _1
+        {
+            ambient 1.0 0.792156994342804 0.031373001635074615 1.0
+            diffuse 0.800000011920929 0.6337256049174904 0.025098401682055016 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExCylinderMat 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _1.003
+        {
+            ambient 1.0 0.792156994342804 0.031373001635074615 1.0
+            diffuse 0.800000011920929 0.6337256049174904 0.025098401682055016 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExPistonMat 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_001
+        {
+            ambient 0.8862749934196472 0.8862749934196472 0.8862749934196472 1.0
+            diffuse 0.709020005300939 0.709020005300939 0.709020005300939 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExGrayMat 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_001.002
+        {
+            ambient 0.7090200185775757 0.7090200185775757 0.7090200185775757 1.0
+            diffuse 0.5672160233142378 0.5672160233142378 0.5672160233142378 1.0
+            specular 0.5 0.5 0.5 1.0 12.0
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExLegMat1 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_006.001
+        {
+            ambient 0.2698040008544922 0.2698040008544922 0.2698040008544922 1.0
+            diffuse 0.21584320389990808 0.21584320389990808 0.21584320389990808 1.0
+            specular 0.0 0.0 0.0 1.0 12.0
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExUCMat1 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_008.001
+        {
+            ambient 0.11764699965715408 0.11764699965715408 0.11764699965715408 1.0
+            diffuse 0.09411760112818479 0.09411760112818479 0.09411760112818479 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExUCMat2 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_006
+        {
+            ambient 0.33725500106811523 0.33725500106811523 0.33725500106811523 1.0
+            diffuse 0.2698040048748851 0.2698040048748851 0.2698040048748851 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_009 genrated by blender2ogre 0.6.0
+
+material ExUCMat3 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_009
+        {
+            ambient 0.0 0.0 0.0 1.0
+            diffuse 0.0 0.0 0.0 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_001 genrated by blender2ogre 0.6.0
+
+material ExUCMat4 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_001
+        {
+            ambient 0.8862749934196472 0.8862749934196472 0.8862749934196472 1.0
+            diffuse 0.709020005300939 0.709020005300939 0.709020005300939 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// _2 genrated by blender2ogre 0.6.0
+
+material ExUCMat5 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _2
+        {
+            ambient 1.0 0.2941179871559143 0.0 0.8999999761581421
+            diffuse 0.800000011920929 0.23529439323089107 0.0 0.8999999761581421
+            specular 0.0 0.0 0.0 0.8999999761581421 12.5
+            emissive 0.0 0.0 0.0 0.8999999761581421
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+
+material ExHouseMat1 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_001.001
+        {
+            ambient 0.8862749934196472 0.8862749934196472 0.8862749934196472 1.0
+            diffuse 0.709020005300939 0.709020005300939 0.709020005300939 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Translucent_Glass_Blue genrated by blender2ogre 0.6.0
+
+material Translucent_Glass_Blue 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Translucent_Glass_Blue
+        {
+            ambient 0.6862750053405762 0.6862750053405762 0.6862750053405762 0.5
+            diffuse 0.5490200124534965 0.5490200124534965 0.5490200124534965 0.5
+            specular 0.0 0.0 0.0 0.5 12.5
+            emissive 0.0 0.0 0.0 0.5
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Blinds_Roman_Hobbled_Blue genrated by blender2ogre 0.6.0
+
+material Blinds_Roman_Hobbled_Blue 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Blinds_Roman_Hobbled_Blue
+        {
+            ambient 0.19607800245285034 0.19607800245285034 0.19607800245285034 1.0
+            diffuse 0.1568624042997122 0.1568624042997122 0.1568624042997122 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+            texture_unit 
+            {
+                texture Blinds_Roman_Hobbled_Blue.jpg
+                tex_address_mode wrap
+                scale 1.0 1.0
+                colour_op modulate
+            }
+        }
+    }
+}
+// Color_008.005 genrated by blender2ogre 0.6.0
+
+material ExHouseMat2
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_008.005
+        {
+            ambient 0.11764699965715408 0.11764699965715408 0.11764699965715408 1.0
+            diffuse 0.09411760112818479 0.09411760112818479 0.09411760112818479 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_009.001 genrated by blender2ogre 0.6.0
+
+material ExHouseMat3 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_009.001
+        {
+            ambient 0.0 0.0 0.0 1.0
+            diffuse 0.0 0.0 0.0 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// _2.001 genrated by blender2ogre 0.6.0
+
+material ExHouseMat4 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _2.001
+        {
+            ambient 1.0 0.2941179871559143 0.0 0.8999999761581421
+            diffuse 0.800000011920929 0.23529439323089107 0.0 0.8999999761581421
+            specular 0.0 0.0 0.0 0.8999999761581421 12.5
+            emissive 0.0 0.0 0.0 0.8999999761581421
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// _3 genrated by blender2ogre 0.6.0
+
+material ExHouseMat5 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _3
+        {
+            ambient 1.0 0.0 0.0 0.8999999761581421
+            diffuse 0.800000011920929 0.0 0.0 0.8999999761581421
+            specular 0.0 0.0 0.0 0.8999999761581421 12.5
+            emissive 0.0 0.0 0.0 0.8999999761581421
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// _1.001 genrated by blender2ogre 0.6.0
+
+material ExHouseMat6 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _1.001
+        {
+            ambient 1.0 0.792156994342804 0.031373001635074615 1.0
+            diffuse 0.800000011920929 0.6337256049174904 0.025098401682055016 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// _CoolGray6_ genrated by blender2ogre 0.6.0
+
+material _CoolGray6_ 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _CoolGray6_
+        {
+            ambient 0.4313730001449585 0.4549019932746887 0.5294119715690613 1.0
+            diffuse 0.3450984052583337 0.3639216000426053 0.4235295835663315 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// _CoolGray8_ genrated by blender2ogre 0.6.0
+
+material _CoolGray8_ 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _CoolGray8_
+        {
+            ambient 0.2980389893054962 0.31372499465942383 0.36470600962638855 1.0
+            diffuse 0.2384311949972986 0.25097999946743244 0.29176481204874527 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// _4 genrated by blender2ogre 0.6.0
+
+material ExHouseMat7 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass _4
+        {
+            ambient 0.23529399931430817 0.6274510025978088 0.0 0.8999999761581421
+            diffuse 0.18823520225636958 0.5019608095580459 0.0 0.8999999761581421
+            specular 0.0 0.0 0.0 0.8999999761581421 12.5
+            emissive 0.0 0.0 0.0 0.8999999761581421
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_A06 genrated by blender2ogre 0.6.0
+
+material ExHouseMat8 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_A06
+        {
+            ambient 0.800000011920929 0.0 0.0 1.0
+            diffuse 0.6400000190734865 0.0 0.0 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_000 genrated by blender2ogre 0.6.0
+
+material ExHouseMat9 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_000
+        {
+            ambient 1.0 1.0 1.0 1.0
+            diffuse 0.800000011920929 0.800000011920929 0.800000011920929 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_007 genrated by blender2ogre 0.6.0
+
+material ExHouseMat10 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_007
+        {
+            ambient 0.22745099663734436 0.22745099663734436 0.22745099663734436 1.0
+            diffuse 0.18196080002130266 0.18196080002130266 0.18196080002130266 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// Color_006.003 genrated by blender2ogre 0.6.0
+
+material ExHouseMat11 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Color_006.003
+        {
+            ambient 0.33725500106811523 0.33725500106811523 0.33725500106811523 1.0
+            diffuse 0.2698040048748851 0.2698040048748851 0.2698040048748851 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
+// FrontColor genrated by blender2ogre 0.6.0
+
+material FrontColor 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass FrontColor
+        {
+            ambient 1.0 1.0 1.0 1.0
+            diffuse 0.800000011920929 0.800000011920929 0.800000011920929 1.0
+            specular 0.0 0.0 0.0 1.0 12.5
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
